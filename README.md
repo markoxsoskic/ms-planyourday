@@ -2,7 +2,7 @@
 
 **Planner App**
 
-[Explore the docs »](https://github.com/markososkic/ms-planyourday)
+[Explore the docs »](https://github.com/markoxsoskic/ms-planyourday)
 
 [Try It Out! (*Please bear in mind that the app is hosted on Render free tier, and the server may take some time to respond. Thank you!*)](https://ms-planyourday.onrender.com)
 
@@ -47,7 +47,7 @@ Follow these steps in order to get a local copy:
 
 1. Clone the repos into the root folder:
    ```sh
-   git clone https://github.com/markososkic/ms-planyourday.git
+   git clone https://github.com/markoxsoskic/ms-planyourday.git
    ```
 2. Install NPM packages using:
    ```sh
