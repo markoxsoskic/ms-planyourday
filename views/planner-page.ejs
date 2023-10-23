@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#d5d3d4">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, shrink-to-fit=no, viewport-fit=cover">
+    <link rel="stylesheet" href="/css/planner-styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="/images/favicon.png">
+    <title>Plan Your Day</title>
+</head>
+
+<body>
+    <header>
+        <div>
+            <h1>Hello <%=name%>!</h1>
+        </div>
+        <div>
+            <h3>
+                <%=today%>.
+            </h3>
+            <h3>
+                <%=temp%>°C in <%=city%>.
+            </h3>
+            <img src="<%=imageURL%>" alt="">
+        </div>
+    </header>
+    <main>
+        <div class="column-one">
+            <h3>Your Daily Tasks</h3>
+            <% for(var i=0; i<newTask.length;i++){ %>
+                <form action="/pages/planyourday/<%=author%>/delete/daily" method="POST">
+                    <div class="task-list">
+                        <div>
+                            <input class="daily-task-list-checkbox" onchange="this.form.submit()" type="checkbox"
+                                name="checkbox" value="<%=newTask[i]._id%>" id="<%=author%>">
+                        </div>
+                        <div>
+                            <span class="daily-task-list">
+                                <%=newTask[i].content%>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+                <% } %>
+                    <form action="/pages/planyourday/<%=author%>/daily" method="POST">
+                        <div class="task-input">
+                            <input class="new-task" type="text" name="newTask" placeholder="Add a new task here"
+                                autocomplete="off">
+                            <input type="hidden" name="author" value="<%=author%>">
+                            <button class="add-new-value" type="submit">+</button>
+                        </div>
+                    </form>
+        </div>
+        <div class="column-two">
+            <h3>Your Top Priorities</h3>
+            <% for(var i=0; i<newPrio.length;i++){ %>
+                <form action="/pages/planyourday/<%=author%>/delete/prio" method="POST">
+                    <div class="task-list">
+                        <div>
+                            <input class="priorities-list-checkbox" onchange="this.form.submit()" type="checkbox"
+                                name="checkbox" value="<%=newPrio[i]._id%>">
+                        </div>
+                        <div>
+                            <span class="priorities-list">
+                                <%=newPrio[i].content%>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+                <% } %>
+                    <form action="/pages/planyourday/<%=author%>/prio" method="POST">
+                        <div class="task-input">
+                            <input class="new-task" type="text" name="newPrio" placeholder="Add a new task here"
+                                autocomplete="off">
+                            <input type="hidden" name="author" value="<%=author%>">
+                            <button class="add-new-value" type="submit">+</button>
+                        </div>
+                    </form>
+        </div>
+        <div class="column-three">
+            <h3>Your Work Tasks</h3>
+            <% for(var i=0; i<newWork.length;i++){ %>
+                <form action="/pages/planyourday/<%=author%>/delete/work" method="POST">
+                    <div class="task-list">
+                        <div>
+                            <input class="work-task-list-checkbox" onchange="this.form.submit()" type="checkbox"
+                                name="checkbox" value="<%=newWork[i]._id%>">
+                        </div>
+                        <div>
+                            <span class="work-task-list">
+                                <%=newWork[i].content%>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+                <% } %>
+                    <form action="/pages/planyourday/<%=author%>/work" method="POST">
+                        <div class="task-input">
+                            <input class="new-task" type="text" name="newWork" placeholder="Add a new task here"
+                                autocomplete="off">
+                            <input type="hidden" name="author" value="<%=author%>">
+                            <button class="add-new-value" type="submit">+</button>
+                        </div>
+                    </form>
+        </div>
+    </main>
+    <section>
+        <div class="column-one">
+            <!-- empty space -->
+        </div>
+        <div class="column-two">
+            <form action="/pages/planyourday/<%=author%>/location" method="POST">
+                <div class="task-input">
+                    <input class="new-task" type="text" placeholder="Update your location" name="newQuery"
+                        autocomplete="off">
+                    <input type="hidden" name="author" value="<%=author%>">
+                    <button class="add-new-value" type="submit">+</button>
+                </div>
+            </form>
+            <form action="/pages/<%=author%>/logout" method="GET">
+                <button class="logout-button" type="submit">Logout</button>
+                <input type="hidden" name="author" value="<%=author%>">
+            </form>
+        </div>
+        <div class="column-three">
+            <!-- empty space -->
+        </div>
+    </section>
+    <footer>
+        <span>© <%=year%> <a href="https://www.markososkic.com" target="_blank">Marko Soskic</a></span>
+    </footer>
+    <script src="/scripts/index.js"></script>
+</body>
+
+</html>
