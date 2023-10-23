@@ -4,7 +4,7 @@
 
 [Explore the docs »](https://github.com/markoxsoskic/ms-planyourday)
 
-[Try It Out! (*Please bear in mind that the app is hosted on Render free tier, and the server may take some time to respond. Thank you!*)](https://ms-planyourday.onrender.com)
+[Try It Out! (*Please bear in mind that the app is hosted on Render free tier, and the server may take some time to respond. Thank you!*)](https://ms-planyourday-mzbt.onrender.com)
 
 
 
