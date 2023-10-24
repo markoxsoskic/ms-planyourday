@@ -49,7 +49,7 @@ router.post("/register", (req, res) => {
             token: crypto.randomBytes(16).toString("hex")
         });
 
-        const link = `https://ms-planyourday.onrender.com/user/confirm/${token.token}`;
+        const link = `https://ms-planyourday-mzbt.onrender.com/user/confirm/${token.token}`;
 
         User.findOne({ email: newUser.email })
             .then((found) => {
